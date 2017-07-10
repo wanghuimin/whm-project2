@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="/assets/js/lib/jquery/jquery.min.js"></script>
+	<script src="/assets/js/lib/Mock/mock.js"></script>
+	<script>
+		Mock.mock('http://g.cn', {
+		    'name'	   : '@name',
+		    'age|1-100': 100,
+		    'color'	   : '@color'
+		});
+
+		$.ajax({
+		    url: 'http://g.cn',
+		    success: function(data){
+		    	console.log(JSON.stringify(data, null, 4));
+		    	console.log(data)
+		    }
+		})
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

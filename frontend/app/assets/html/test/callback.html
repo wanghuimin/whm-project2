@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="/assets/js/lib/jquery/jquery.min.js"></script>
+  <style>
+    li{
+      border: 1px solid #000;
+    }
+    a{
+      position: relative;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+	<ul>
+    <li onclick="location.href='http://www.baidu.com'"><a href="http://dealer.xingyuanauto.com/platform/Auth/Login?ReturnUrl=http%3A%2F%2Fdealer.xingyuanauto.com%2Fplatform">123</a></li>
+  </ul>
+  <div class="bbb"></div>
+	<script>
+  // $(document).on('click','a',function(event){
+  //   event.preventdefault();
+  // })
+		// function Thing(name) {
+		// this.name = name;
+		// }
+		// Thing.prototype.doSomething = function(callback) {
+
+		// callback.call(this);
+
+		// }
+		 
+		// function foo() {
+		// alert(this.name);
+		// }
+		 
+		// var t = new Thing('Joe');
+		// t.doSomething(foo); 
+	function aaa(){
+		var bbb = $('.bbb').ccc({
+			a: a,
+			b: false,
+			c: {},
+			d: function(){
+				alert('a')
+			}
+		})
+	}
+	aaa();
+	</script>
+	
+</body>
+</html>

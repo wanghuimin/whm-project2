@@ -1,0 +1,86 @@
+
+@font-face {font-family: "iconfont";
+  src: url('/assets/fonts/iconfont.eot?t=1495437848211'); /* IE9*/
+  src: url('/assets/fonts/iconfont.eot?t=1495437848211#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('/assets/fonts/iconfont.woff?t=1495437848211') format('woff'), /* chrome, firefox */
+  url('/assets/fonts/iconfont.ttf?t=1495437848211') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('/assets/fonts/iconfont.svg?t=1495437848211#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gou:before { content: "\e601"; }
+
+.icon-github:before { content: "\e600"; }
+
+.icon-calendar:before { content: "\e609"; }
+
+.icon-up:before { content: "\e65d"; }
+
+.icon-down:before { content: "\e65e"; }
+
+.icon-right:before { content: "\e65f"; }
+
+.icon-left:before { content: "\e660"; }
+
+.icon-gotop:before { content: "\e619"; }
+
+.icon-gou:before { content: "\e601"; }
+
+.icon-github:before { content: "\e600"; }
+
+.icon-half-screen:before { content: "\e606"; }
+
+.icon-fullscreen:before { content: "\e607"; }
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  outline: 0;
+}
+button,a,input:focus,textarea:focus{
+  outline: 0;
+}
+ul{
+  list-style-type: none;
+}
+.clearfix{
+  &:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden;
+  }
+}
+.hide{
+  display: none !important;
+}
+.show{
+  display: block !important;
+  &-in{
+    display: inline !important;
+  }
+  &-ib{
+    display: inline-block !important;
+  }
+}
+.text-center{
+  text-align: center;
+}
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}

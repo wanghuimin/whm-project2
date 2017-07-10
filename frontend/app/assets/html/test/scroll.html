@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="/assets/js/lib/jquery/jquery.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,body{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		ul{
+			list-style-type: none;
+		}
+		.box{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0
+		}
+		.box li{
+			width: 100%;
+			height: 100%;
+		}
+		.box li:first-of-type{
+			background: red;
+		}
+		.box li:nth-of-type(2){
+			background: yellow
+		}
+		
+		.box li:nth-of-type(3){
+			background: blue
+		}
+		
+		.box li:nth-of-type(4){
+			background: #ff5722;
+		}
+
+		.circle{
+			position: fixed;
+			right: 0;
+			top: 30%;
+		}
+		.circle li{
+			width: 20px;
+			height: 20px;
+			background: #000;
+			border-radius:50%;
+			margin: 10px;
+			cursor: pointer;
+		}
+		.circle li.active{
+			background: green;
+		}
+		.animate-box{
+			width: 100px;
+			height: 100px;
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<ul class="box">
+		<li>
+			<div class="animate-box animate-box1"></div>
+		</li>
+		<li>
+			<div class="animate-box animate-box2"></div>
+		</li>
+		<li>
+			<div class="animate-box animate-box3"></div>			
+		</li>
+		<li>
+			<div class="animate-box animate-box4"></div>
+		</li>
+	</ul>
+	<ul class="circle">
+		<li class="active"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<script>
+		$(function(){
+			var winH = window.innerHeight;
+			var swiper = {
+				switch: function(){		
+					var self = this;
+					$(document).on('click','.circle li',function(){
+						var topH = $(this).index() * winH;
+						$(".box").animate({
+							top: -topH
+						});
+						$(this).addClass('active').siblings().removeClass('active');
+						self.animateFn();
+					})
+				},
+				animateFn: function(){
+					var liIndex = $('li.active').index();
+					switch(liIndex){
+						case(0):
+							$('.animate-box1').animate({
+								width: '20px',
+								height: '30px'
+							});
+							break;
+						case(1):
+							$('.animate-box2').animate({
+								width: '200px',
+								height: '300px'
+							});
+							break;
+						case(2):
+							$('.animate-box3').animate({
+								width: '600px',
+								height: '200px'
+							});
+							break;
+						case(3):
+							$('.animate-box4').animate({
+								width: '900px',
+								height: '100px'
+							});
+							break;
+					}
+				},
+				mouseFn: function(event){
+					var self = this;
+				    event = event || window.event;
+				    var deltaY = event.deltaY || -event.wheelDelta || event.detail;
+				    if (deltaY>0) {
+					   	var liActive = $('li.active').index()+1;
+				    }else{
+					   	var liActive = $('li.active').index()-1;
+				    }
+				    var topH =  liActive*winH;
+				    if (liActive >= 0 && liActive <= 3) {
+						$(".box:not(:animated)").animate({
+							top: -topH
+						},function(){
+							$('.circle li').eq(liActive).addClass('active').siblings().removeClass('active');
+							self.animateFn();
+						});
+				    }
+				},
+				mouse: function(){
+					var self = this;
+					if (window.addEventListener) {
+						window.addEventListener("DOMMouseScroll", function(event) {
+							self.mouseFn(event);
+						})
+					}
+					window.onmousewheel = function(event) {
+						self.mouseFn(event);
+					}
+				}
+			}
+			swiper.animateFn();
+			swiper.switch();	
+			swiper.mouse();
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="/assets/js/lib/jquery/jquery.min.js"></script>
+	<style>
+		.complete{
+	    color: #ccc;
+	    text-decoration: line-through;
+		}
+	</style>
+</head>
+<body>
+
+	<input type="text" class="todo-input" placeholder="TODO">
+	<input type="button" class="add" value="TODO">
+	<p>共<span class="total">0</span>条</p>
+	<p>已完成<span class="full">0</span>条</p>
+	<p>还剩<span class="last">0</span>条</p>
+	<ul class="tudo-list"></ul>
+	<script>
+		$(function(){
+			var todo = {
+				addTodo: function(){
+					var self = this;
+					$(document).on('click','.add',function(){
+						if ($('.todo-input').val() == '') {
+							alert('请输入todo');
+							$(".todo-input").focus();
+							return false;
+						}
+						var todoText = $('.todo-input').val();
+						var todoList = `<li>${todoText}</li>`;
+						$('.tudo-list').append(todoList);
+						$('.todo-input').val('');
+						$('.total').text($('.tudo-list li').length);
+						$(".todo-input").focus();
+						$('.last').text($('.tudo-list li').length-$('.complete').length);
+					})
+				},
+				complete: function(){
+					var self = this;
+					$('.tudo-list').on('click','li',function(){
+						$(this).addClass('complete');
+						$('.full').text($('.complete').length)
+						$('.last').text($('.tudo-list li').length-$('.complete').length);
+					})
+				},
+				init: function(){
+					var self = this;
+					self.addTodo();
+					self.complete();
+				}
+			}
+			todo.init();
+		})
+
+	</script>
+</body>
+</html>

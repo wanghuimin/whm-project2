@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <script src="/assets/js/lib/jquery/jquery.min.js"></script>
+  <style>
+    #qipan {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+      width: 400px;
+      height: 400px;
+      border-width: 1px;
+      border-left-width: 0;
+      border-top-width: 0;
+      border-style: solid;
+      border-color: #000;
+      background-image: linear-gradient(#000 1px, transparent 0), linear-gradient(90deg, #000 1px, transparent 0);
+      background-size: 40px 40px;
+      position: relative;
+    }
+    .qizi{
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+    }
+    .qizi.bai{
+      background: #ccc;
+    }
+    .qizi.hei{
+      background: #000
+    }
+  </style>
+</head>
+<body>
+    
+	<div id="qipan">
+    <!-- <span class="qizi bai"></span>   -->
+  </div>
+
+  <script>
+
+    var qipanLeft = $('#qipan')[0].offsetLeft;
+    var qipanTop = $('#qipan')[0].offsetTop;
+    var baiFlag = true;
+    var baiSum = 0;
+    var heiSum = 0;
+    var play = function(e){ 
+      var sumX = Math.round((e.clientX - qipanLeft)/40);
+      var sumY = Math.round((e.clientY - qipanTop)/40);
+      for (var i = 0; i < $('.qizi').length; i++) {
+        var qiziOldTop = parseInt($('.qizi').eq(i).css('top'));
+        var qiziOldLeft = parseInt($('.qizi').eq(i).css('left'));
+        if (sumY * 40 - 8 ==  qiziOldTop && sumX * 40 - 8 == qiziOldLeft){
+          alert('已经有棋子了，请另寻他处')
+          return false;
+        }
+      }
+
+      qiziHtml='<span class="qizi"></span>';
+      $('#qipan').append(qiziHtml);
+      var qiziNew = $('.qizi').eq($('.qizi').length-1);
+
+      if (baiFlag) {
+        $(qiziNew).addClass('bai').attr('axis',String(sumY) + String(sumX));
+        baiFlag = !baiFlag;
+      }else{
+        $(qiziNew).addClass('hei').attr('axis',String(sumY) + String(sumX));
+        $(qiziNew).addClass('hei');        
+        baiFlag = !baiFlag;
+      }
+      $(qiziNew).css({
+        'top': sumY * 40 - 8,
+        'left': sumX * 40 - 8
+      })
+
+      isSuccess(String(sumY) + String(sumX) , baiFlag?'hei':'bai')
+    }
+    var isSuccess = function(index,elem){
+      var first = parseInt(String(index).substr(0,1));
+      var last = parseInt(String(index).substr(1,1));
+      var t = last+5;
+      var sum = 0;
+      // 横向判断
+      for (var i = last-4; i < last+5; i++) {
+        var id = `.qizi[axis=${first.toString()+i.toString()}]`;
+        if ($(id).length && $(id).hasClass(elem)) {
+          sum ++;
+          if (sum >= 6) {
+            alert('success')
+            return false;
+          }
+        }
+      }
+      // 纵向判断
+      for (var j = first-4; j < first+5; j++) {
+        var id = `.qizi[axis=${j.toString() + last.toString()}]`;
+        if ($(id).length && $(id).hasClass(elem)) {
+          sum ++;
+          if (sum >= 6) {
+            alert('success')
+            return false;
+          }
+        }
+      }
+
+      // 左斜上判断
+      for (var k = first-4; k < first+5; k++) {
+        
+        for (var  m = last-4; m < last+5; m++) {
+          var id = `.qizi[axis=${k.toString() + m.toString()}]`
+          if ($(id).length && $(id).hasClass(elem)) {
+            sum ++;
+            if (sum >= 6) {
+              alert('success')
+              return false;
+            }
+          }
+        }
+      }
+      // 右斜上判断
+
+    }
+
+    $(document).on('click','#qipan',function(e){
+      play(e);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+html,body,.ent_painting2016_wrap{width:100%;height:100%;overflow:hidden}
+*{margin:0;padding:0;border:0;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+.ent_painting2016_wrap{position:relative}
+h1{display:none}
+#app{position:absolute;left:0;top:0;z-index:90;background: black;}
+
+#start{
+	position:absolute;
+	display: block;
+	left:50%;
+	bottom:6.2rem;
+	z-index:850;
+	width:174px;
+	height:172px;
+	margin-left:-87px;
+	background:url(images/button.png) no-repeat;
+}
+#start_txt {
+	position: absolute;
+	display: block;
+	width: 100%;
+	z-index: 850;
+	bottom:3.8rem;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
+/*#start:after{
+	content:"";
+	display:block;
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:140px;
+	height:140px;
+	background:url(images/cover.png) -670px 0;
+	-webkit-animation:start 1s ease-in-out infinite;
+	-webkit-transform-origin:50% 100%
+}
+#start:active:after{
+	-webkit-transform:scale(0.95);
+	-webkit-animation:none
+}
+*/
+@-webkit-keyframes start{0%{-webkit-transform:scale(1)}
+50%{-webkit-transform:scale(0.95)}
+100%{-webkit-transform:scale(1)}
+}
+@-webkit-keyframes start1{0%{-webkit-transform:translate(1px,0)}
+50%{-webkit-transform:translate(0,0)}
+100%{-webkit-transform:translate(1px,0)}
+}
+.collection{position:relative;top:1900px}
+.collection .item{display:block;position:absolute;left:0;top:0}
+.cover{position:absolute;left:0;top:0;right:0;bottom:0;z-index:800;overflow:hidden;}
+.cover .renyu{opacity:0;position:absolute;left:70px;top:230px;width:110px;height:130px;background:url(images/cover.png) no-repeat -125px 0;-webkit-transform:rotate(-60deg);-webkit-transition:transform 3s,opacity 1s;-webkit-transform-origin:200% 10%}
+.cover .yu{position:absolute;left:657px;top:377px;width:60px;height:130px;background:url(images/cover.png) no-repeat -235px 0;-webkit-transform-origin:50% 0;-webkit-animation:rotate_yuan 3s ease-in-out infinite}
+@-webkit-keyframes rotate_yuan{0%{-webkit-transform:rotate(-4deg)}
+50%{-webkit-transform:rotate(10deg)}
+100%{-webkit-transform:rotate(-4deg)}
+}
+.cover .year2016{opacity:0;position:absolute;left:230px;top:90px;width:80px;height:250px;background:url(images/cover.png) no-repeat 0 -135px;-webkit-transition:transform 3s,opacity 1s}
+.cover .title,.cover .title_bg{width:725px;height:1206px;position:absolute;left:0;top:0;background-size:cover}
+.cover.active .renyu{opacity:1;-webkit-transform:rotate(0)}
+.cover.active .year2016{-webkit-transform:translate(0,50px);opacity:1}
+.loading{position:absolute;left:0;top:0;right:0;bottom:0;z-index:900;background:#000}
+.loading .loading_icon{position:absolute;left:285px;top:30%;width:180px;height:40px;padding-top:160px;font:36px/1 "HelveticaNeue","PingFangSC","Microsoft Yahei";color:#fff;text-align:center}
+
+.music{
+	position:absolute;
+	top:60px;
+	right:40px;
+	z-index:870;
+	width:80px;
+	height:80px;
+	background:url(images/music_icon.png) no-repeat;
+	background-size: 80px 80px;
+	-webkit-animation:music 1000ms linear infinite
+}
+@-webkit-keyframes music{
+	0% {
+		transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+	}
+}
+.music_close{
+	-webkit-animation:none
+}
+.backcover{position:absolute;left:0;top:0;right:0;bottom:0;z-index:860;background:#000 }/*url(images/backcover.jpg) no-repeat*/
+/*.backcover .logo{position:absolute;bottom:25px;left:270px;width:210px;height:90px;background:url(images/cover.png) no-repeat -445px 0}
+.backcover .tie{position:absolute;top:130px;left:200px;width:320px;height:130px;background:url(images/cover.png) no-repeat -125px -135px;-webkit-transform:translate(50px,0);opacity:0;-webkit-transition:all .5s ease 0s}
+.backcover .share{position:absolute;top:270px;left:227px;width:320px;height:130px;background:url(images/cover.png) no-repeat -125px -264px;-webkit-transform:translate(50px,0);opacity:0;-webkit-transition:all .5s ease .2s}
+.backcover .reload{position:absolute;top:430px;left:209px;width:320px;height:110px;background:url(images/cover.png) no-repeat -125px -410px;-webkit-transform:translate(50px,0);opacity:0;-webkit-transition:all .5s ease .3s}
+.backcover .review{position:absolute;top:560px;left:202px;width:320px;height:115px;background:url(images/cover.png) no-repeat -125px -525px;-webkit-transform:translate(50px,0);opacity:0;-webkit-transition:all .5s ease .6s}
+.backcover .tie:active,.backcover .share:active,.backcover .reload:active,.backcover .review:active{opacity:.8}
+.backcover .list{position:absolute;top:760px;left:60px;width:640px;height:200px;background:url(images/cover.png) no-repeat 0 -665px;-webkit-transform:translate(50px,0);opacity:0;-webkit-transition:all .5s ease .8s}*/
+.backcover.active .tie,.backcover.active .share,.backcover.active .reload,.backcover.active .review,.backcover.active .list{-webkit-transform:translate(0,0);opacity:1}

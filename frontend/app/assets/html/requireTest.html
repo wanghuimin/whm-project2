@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="/assets/js/lib/requirejs/require.js"></script>
+	<script>
+		require.config({
+			baseUrl: '/assets/js',
+			paths: {
+				'jquery': './lib/jquery/jquery.min',
+				'chart': './lib/Chart.js/Chart.min',
+				'wchart': './components/wchart'
+			}
+		})
+		require(['jquery','chart','wchart'],function($,Chart,xChart){
+			  var lineData = {
+			    "datas": [
+			      {
+			        "label": "浏览量",
+			        "data": [65, 59, 80, 81, 56, 55, 40],
+			      },
+			      {
+			        "label": "分享量",
+			        "data": [45,34,21,50,24,23,14],
+			      },
+			      {
+			        "label": "线索量",
+			        "data": [34,22,31,22,33,42,45,23],
+			      }
+			    ],
+			    "labels": ["2017-03-28", "2017-03-28", "2017-03-28", "2017-03-28", "2017-03-28", "2017-03-28", "2017-03-28"]
+			  }
+
+	      xChart({
+		      elem: '#lineChart',
+		      type: 'line',
+		      data: lineData
+		    });
+		})
+	</script>
+</head>
+<body>
+	<canvas id="lineChart" width="400" height="400"></canvas>
+	
+</body>
+</html>

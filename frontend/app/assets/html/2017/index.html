@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<!--[if IE 6 ]> <html class="ne_ua_ie6 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 7 ]> <html class="ne_ua_ie7 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 8 ]> <html class="ne_ua_ie8 ne_ua_ielte8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ne_ua_ie9"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> 
+<html phone="1"> 
+<!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=725, user-scalable=no" />
+<title>慧微店</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="renderer" content="webkit">
+<meta content="telephone=no" name="format-detection"/>
+<meta content="email=no" name="format-detection"/>
+<meta name="msapplication-tap-highlight" content="no">
+
+<script>
+	if((/_touchall=1/.test(location.search)||!/auto|house|home|bbs|blog/.test(location.host))&&!(document.documentElement&&document.documentElement.getAttribute("phone"))&&!/_pc=1/.test(location.search)&&/android.*?mobile|ipod|blackberry|bb\d+|phone/i.test(navigator.userAgent))document.write('<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/><div style="position:fixed;width:100%;height:100%;background:#fff"><div style="position:absolute;top:50%;left:0;width:100%;height:40px;margin-top:-40px;text-align:center;padding-top:40px;color:#666">页面加载中 ...</div></div><plaintext style="display:none">');
+</script>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/paint.css" />
+<script src="js/zepto.js"></script>
+
+<style>
+.ne-wrap{background: rgb(61, 64, 69);text-align: center;width: 100%;font-family: Sim sun;color: #fff;}
+.ne-box h1{display: block;font-size: 24px;font-weight: normal;line-height: 3;margin-top: 40px;}
+.ne-box h2{display: block;font-size: 16px;font-weight: normal;line-height: 2;}
+.ne-box img{box-shadow: 0px 0px 10px rgba(255,255,255,0.6);border-radius: 10px;}
+.backcover {
+	background: transparent;
+}
+.cover .title {
+	position: absolute;
+	display: block;
+	width: 100%;
+	background-size: 100% auto;
+	background: url(css/images/title.png) no-repeat center 17rem;
+}
+.active .title {
+	-webkit-animation-name: title_init;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes title_init /* Safari 和 Chrome */
+{
+	0% {opacity: 0}
+	100% {opacity: 1}
+} 
+
+.active .bg_end {
+	background: url(images/sence_7.jpg) no-repeat top left;
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
+	-webkit-animation-name: bg_end_auto;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes bg_end_auto /* Safari 和 Chrome */
+{
+	0% {opacity: 0}
+	60% {opacity: 0}
+	100% {opacity: 1}
+} 
+.title_end {
+	position: absolute;
+	background: url(css/images/title_2.png) no-repeat;
+	background-size: 100%;
+	width: 32rem;
+	height: 15.7rem;
+	display: block;
+	top: 9rem;
+	left: 7rem;
+	opacity: 0;
+}
+.active .title_end {
+	-webkit-animation-name: title_end_auto;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+}
+@-webkit-keyframes title_end_auto /* Safari 和 Chrome */
+{
+	0% {opacity: 0}
+	60% {opacity: 0}
+	100% {opacity: 1}
+}
+.text_end {
+	position: absolute;
+	background: url(css/images/text.png) no-repeat;
+	background-size: 100%;
+	width: 32rem;
+	height: 14rem;
+	display: block;
+	top: 52rem;
+	left: 7rem;
+	opacity: 0;
+}
+.active .text_end {
+	-webkit-animation-name: text_end_auto;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+}
+@-webkit-keyframes text_end_auto /* Safari 和 Chrome */
+{
+	0% {opacity: 0}
+	60% {opacity: 0}
+	100% {opacity: 1}
+}
+.button_1 {
+	position: absolute;
+	background: url(css/images/btn_tp.png) no-repeat;
+	background-size: 100%;
+	width: 15rem;
+	height: 15rem;
+	display: block;
+	top: 59rem;
+	left: 15rem;
+	opacity: 0;
+}
+.active .button_1 {
+	-webkit-animation-name: button_1_auto;
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+}
+@-webkit-keyframes button_1_auto /* Safari 和 Chrome */
+{
+	0% {opacity: 0}
+	60% {opacity: 0}
+	100% {opacity: 1}
+}
+.button_2 {
+	position: absolute;
+	background: url(css/images/btn_fx.png) no-repeat;
+	background-size: 100%;
+	width: 15rem;
+	height: 15rem;
+	display: block;
+	top: 65rem;
+	left: 6rem;
+	opacity: 0;
+}
+.active .button_2 {
+	/*-webkit-animation-name: button_2_auto;*/
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+}
+@-webkit-keyframes button_2_auto /* Safari 和 Chrome */
+{
+	0% {opacity: 0}
+	60% {opacity: 0}
+	100% {opacity: 1}
+}
+.button_3 {
+	position: absolute;
+	background: url(css/images/btn_hg.png) no-repeat;
+	background-size: 100%;
+	width: 15rem;
+	height: 15rem;
+	display: block;
+	top: 65rem;
+	left: 23rem;
+	opacity: 0;
+}
+.active .button_3 {
+	/*-webkit-animation-name: button_3_auto;*/
+    -webkit-animation-duration: 1500ms;
+    -webkit-animation-timing-function: linear;
+    opacity: 1;
+}
+@-webkit-keyframes button_3_auto /* Safari 和 Chrome */
+{
+	0% {opacity: 0}
+	60% {opacity: 0}
+	100% {opacity: 1}
+}
+
+#share_bg {
+	background: black;
+	opacity: .8;
+	z-index: 1000;
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+#share_tips {
+	position: absolute;
+	z-index: 1001;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left:0;
+	top: 0;
+	background: url(css/images/share_tips.png) no-repeat center 20%;
+	background-size: 80%;
+	display: none;
+}
+</style>
+</head>
+
+
+<body>
+<h1>慧微店</h1>
+<div class="ent_painting2016_wrap" id="ent_painting2016_wrap">
+	<canvas id="app" width="100%" height="100%"></canvas>
+	<div class="collection"></div>
+</div>
+<div class="cover">
+</div>
+<div class="loading">
+	<div class="loading_icon">加 载 中</div>
+</div>
+<script>
+var _smq = _smq || [];
+
+var report=0;
+
+!function(){"use strict";function i(i){i.preventDefault()}function e(i){
+
+	this.canvas=i,this.ctx=this.canvas.getContext("2d"),this.audio=$("#audio")[0],this.imgList=[
+		{link:"images/1.jpg",imgW:"750",imgH:"1333"},
+		{link:"images/2.jpg",imgW:"1864",imgH:"3314",areaW:"96",areaH:"171",areaL:"994",areaT:"1390",limitMax:.9,limitMin:.6},
+		{link:"images/3.jpg",imgW:"1864",imgH:"3314",areaW:"141",areaH:"250",areaL:"925",areaT:"1010",limitMax:.9,limitMin:.6}
+		],
+		this.radio = 1,
+		this.index = 0,
+		this.fps = 40,
+		this.scale = .985,
+		this.scaleSlow = .995
+	}
+	e.prototype.initCanvas = function() {
+	    this.w = window.innerWidth,
+	    this.h = window.innerHeight,
+	    this.w > this.h && (this.w = 725, this.h = 1206, $("body").css({
+	        width: "725px",
+	        height: "1206px",
+	        margin: "0 auto",
+	        position: "relative",
+	        overflow: "hidden"
+	    }), $("html").css({
+	        width: "100%",
+	        height: "100%"
+	    })),
+	    this.canvas.setAttribute("width", this.w),
+	    this.canvas.setAttribute("height", this.h)
+	},
+	e.prototype.preload = function() {
+	    function i() {
+	        e++,
+	        e == n.length && a(t.imgList)
+	    }
+	    for (var e = 0,
+	    t = this,
+	    a = function() {},
+	    n = this.imgList, m = 0; m < n.length; m++) this.imgList[m].image = new Image,
+	    this.imgList[m].image.src = n[m].link,
+	    this.imgList[m].image.i = m,
+	    this.imgList[m].image.name = m,
+	    this.imgList[m].image.className = "item",
+	    this.imgList[m].image.onload = function() {
+	        $(".collection").append(t.imgList[this.i].image),
+	        i()
+	    },
+	    this.imgList[m].image.onerror = function() {
+	        console.log("\u5931\u8d25" + this.i),
+	        i(),
+	        $(".collection").append(t.imgList[this.i].image)
+	    };
+	    return {
+	        done: function(i) {
+	            a = i || a
+	        }
+	    }
+	},
+	e.prototype.showend = function() {
+	    $(".backcover").removeClass("hidden"),
+	    $("#start").hide(),
+	    $("#start_txt").hide(),
+	    setTimeout(function() {
+	        $(".backcover").addClass("active")
+	    },
+	    200)
+	},
+	e.prototype.init = function() {
+	    var i = this;
+	    this.initCanvas(),
+	    this.preload().done(function() {
+	        $(".loading").hide(),
+	        $(".cover").addClass("active"),
+	        i.domList = $(".collection .item").sort(function(i, e) {
+	            return i.name - e.name
+	        }),
+	        i.img_oversize = i.domList[i.index + 1].image,
+	        i.img_minisize = i.domList[i.index].image,
+	        i.draw()
+	        setInterval(function(){i.touchEvent()},500)
+	        
+	    })
+	},
+	e.prototype.draw = function() {
+	    if (this.index + 1 != this.imgList.length) {
+	        if (this.radio < this.imgList[this.index + 1].areaW / this.imgList[this.index + 1].imgW && (this.index++, this.radio = 1, !this.imgList[this.index + 1])) return void this.showend();
+	        this.imgNext = this.imgList[this.index + 1],
+	        this.imgCur = this.imgList[this.index],
+	        this.img_oversize = this.domList[this.index + 1],
+	        this.img_minisize = this.domList[this.index],
+	        this.drawImgOversize(this.img_oversize, this.imgNext.imgW, this.imgNext.imgH, this.imgNext.areaW, this.imgNext.areaH, this.imgNext.areaL, this.imgNext.areaT, this.radio),
+	        this.drawImgMinisize(this.img_minisize, this.imgCur.imgW, this.imgCur.imgH, this.imgNext.imgW, this.imgNext.imgH, this.imgNext.areaW, this.imgNext.areaH, this.imgNext.areaL, this.imgNext.areaT, this.radio)
+	    }
+	},
+	e.prototype.touchEvent = function() {
+	    var i = this;
+        if (report == 0) {
+            _smq.push(['custom', 'x-trailh5', 'qidong']);
+            report = report + 1;
+        };
+        _smq.push(['custom', 'x-trailh5', 'qidong']);
+        function e() {
+            var a = (new Date).getTime();
+            if (i.index + 1 != i.imgList.length) {
+                if (a - t < 1e3 / i.fps) return void(i.timer = requestAnimationFrame(e));
+                t = a,
+                i.imgList[i.index + 1].limitMax && i.imgList[i.index + 1].limitMin && i.radio < i.imgList[i.index + 1].limitMax && i.radio > i.imgList[i.index + 1].limitMin ? i.radio = i.scaleSlow * i.radio: i.radio = i.scale * i.radio,
+                i.draw(),
+                i.timer = requestAnimationFrame(e)
+            }
+        }
+        cancelAnimationFrame(i.timer),
+        $(".cover").length && $(".cover")[0].remove();
+        var t = (new Date).getTime();
+        i.timer = requestAnimationFrame(e)
+	},
+	e.prototype.drawImgOversize = function(i, e, t, a, n, m, s, g) {
+	    this.ctx.drawImage(i, m - (a / g - a) * (m / (e - a)), s - (n / g - n) * (s / (t - n)), a / g, n / g, 0, 0, 750, 1206)
+	},
+	e.prototype.drawImgMinisize = function(i, e, t, a, n, m, s, g, r, o) {
+	    this.ctx.drawImage(i, 0, 0, e, t, (m / o - m) * (g / (a - m)) * o * 750 / m, (s / o - s) * (r / (n - s)) * o * 1206 / s, 750 * o, 1206 * o)
+	};
+	var a = new e($("#app")[0]);
+	a.init()
+} ();
+</script>
+
+<!--  -->
+
+<!-- STAT WRating v1.0 -->
+<!-- <script type="text/javascript" src="js/wrating.js"></script> -->
+
+<!-- <script>
+;(function(){if(/s=noRedirect/i.test(location.search))return;if(/AppleWebKit.*Mobile/i.test(navigator.userAgent)||(/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|$C|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){}else{try{document.body.style="";document.body.className="ne-wrap";document.body.innerHTML="<div class='ne-box'><h1>《全新奇骏征服未知之旅》</h1><img src='images/qr.jpg'><h2>为了更好的体验，请扫码观看~</h2></div>";console&&console.log('NyPhile')}catch(e){}}})();
+</script>
+ -->
+
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

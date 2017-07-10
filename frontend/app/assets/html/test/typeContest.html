@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="/assets/js/lib/jquery/jquery.min.js"></script>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.wrap{
+			width: 980px;
+			margin: 0 auto;
+			padding: 20px;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			position: absolute;
+	    transform: translate(-50%,-50%);
+	    top: 50%;
+	    left: 50%;
+		}
+		.content{
+			background: #f5f5f5;
+			min-height: 100px;
+			border-radius: 5px;
+			padding: 5px;
+			margin-top: 20px;
+			color: #666;
+		}
+		.text-content{
+			width: 100%;
+			resize: none;
+			border-radius: 5px;
+			margin-top: 20px;
+			border: 2px solid #f5f5f5;
+			color: #666;
+		}
+		.time-wrap{
+			text-align: center;
+		}	
+		.time{
+			color: red;
+			font-size: 20px;
+		}
+		.btn-wrap{
+			margin-top: 15px;
+			text-align: right;
+		}
+		.btn{
+			padding: 5px 20px;
+			background: #f5f5f5;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+			color: #666;			
+		}
+		.btn.btn-start{
+			background: #5ce2ca;
+			border-color: #5ce2ca;
+		}
+		.result{
+			font-size: 60px;
+	    position: absolute;
+	    transform: translate(-50%,-50%);
+	    top: 50%;
+	    left: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<p class="time-wrap">剩余时间：<span class="time">15分00秒</span></p>
+		<div class="content">到这里第二阶段已经全部结束，我们已经掌握了全部 React.js 实战需要的入门知识。接下来我们会学习两个相对比较高级的 React.js 的概念，然后进入 React-redux 的世界，让它们配合 React.js 来构建更成熟的前端页面。</div>
+		<textarea name="" class="text-content" cols="30" rows="10"  onpaste="return false;" disabled="true"></textarea>
+		<p class="btn-wrap">
+			<input type="button" class="btn btn-start" value="开始">
+			<input type="button" class="btn btn-end" value="提交">
+		</p>
+	</div>
+	<script>
+	$(function(){
+		var typeContent = {
+			countDown: function(sum){
+				var timeSum = sum*60;
+				var self = this;
+				$('.time').text(sum + '分00秒');
+				$('.text-content').attr('disabled',false);	
+				$('.text-content').focus();	
+				timer = setInterval(function(){
+					if (timeSum == 0) {
+						clearInterval(timer);
+						$('.type-content').attr('disabled',true);
+						alert('时间到');
+						self.textCompared();
+						$('.btn-end').on('click',function(){
+							return false;
+						})
+						return false;
+					}
+					timeSum--;
+					$('.time').text(Math.floor(timeSum/60) + '分' + timeSum%60 +'秒');
+				},1000)
+			},
+			endEnter: function(){
+				var self = this;
+				$(document).on('click','.btn-end',function(){
+					var toSubmit = confirm('还有时间，确定要提交？');
+					if (toSubmit == true) {
+						self.textCompared();
+					}
+				})
+			},
+			textCompared: function(){
+				var self = this;
+				var correctSum = 0;
+				var content = $('.content').text();
+				var textContent = $('.text-content').val();
+				for (var i = 0; i < content.length; i++) {
+					if (content.charAt(i) === textContent.charAt(i)) {
+						correctSum++;
+					}else{
+						console.log(content.charAt(i))
+					}
+				}
+				var resultHtml = '<div class="result">正确率：' + ((correctSum/content.length)*100).toFixed(2) + '%</div>';
+				$('body').html(resultHtml);
+				clearInterval(timer)
+			},
+			init:function(){
+				var self = this;
+				$(document).one('click','.btn-start',function(){
+					self.countDown(15);
+					self.endEnter();
+				})
+			} 
+		}
+		typeContent.init();
+	})
+	</script>
+</body>
+</html>

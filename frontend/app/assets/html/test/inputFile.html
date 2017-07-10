@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="/assets/js/lib/jquery/jquery.min.js"></script>
+</head>
+<body>
+	<input class="input-file" type="file">
+	<img class="img-box" src="" alt="">
+	<script>
+		$(function(){
+			$(document).on('change','.input-file',function(e){
+				var imgURL = URL.createObjectURL(event.target.files[0]);
+				$('.img-box').attr('src',imgURL)
+			})
+		})
+	</script>
+</body>
+
+</html>

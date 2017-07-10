@@ -1,0 +1,84 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+
+# 公司内网+仿真环境
+172.16.0.132 svn.tech.xingyuanauto.com
+#平台接口站点
+172.16.1.184 api.xingyuanauto.com
+
+#平台静态资源站点
+172.16.1.184 xy.staticfile.com
+
+#行圆智慧云根站点
+172.16.1.184 dealer.xingyuanauto.com
+
+# 行圆汽车-仿真
+#内网环境
+172.16.0.132      db.xingyuanauto.com
+172.16.0.132      tfs.tech.xingyuanauto.com
+172.16.0.132    svn.tech.xingyuanauto.com
+#平台站点
+172.16.1.184      platform.xingyuanauto.com
+172.16.1.184      api.xingyuanauto.com
+#平台接口站点
+172.16.1.184      api.platform.xingyuanauto.com
+#平台短信站点
+172.16.1.184      sms.platform.xingyuanauto.com
+#平台静态资源站点
+172.16.1.184      xy.staticfile.com
+
+#本地环境
+172.16.1.184      op.xingyuanauto.com
+172.16.1.184      dealer.xingyuanauto.com
+172.16.1.184    log.xingyuanauto.com
+
+#前端频道页
+172.16.1.184    cheshi.qichedaquan.com
+172.16.1.184    dealer.qichedaquan.com
+172.16.1.184    price.qichedaquan.com
+172.16.1.184      jiangjia.qichedaquan.com
+172.16.1.184    huiyuan.qichedaquan.com
+#前端wap
+172.16.1.184    m.dealer.qichedaquan.com
+172.16.1.184    m.price.qichedaquan.com
+172.16.1.184      m.jiangjia.qichedaquan.com
+172.16.1.184    m.huiyuan.qichedaquan.com
+#下单
+172.16.1.184      api.xingyuanauto.com
+#图片服务器
+172.16.0.107      img1.qichedaquancdn.com
+172.16.0.108      img2.qichedaquancdn.com
+172.16.0.104    i.qichedaquan.com
+172.16.0.135      static.qcdqcdn.com
+#汽车大全
+172.16.0.104      i.qichedaquan.com
+172.16.0.103   qichedaquan.com
+172.16.0.103   www.qichedaquan.com
+172.16.0.142   car.qichedaquan.com
+172.16.0.103   news.qichedaquan.com
+172.16.0.102   v.qichedaquan.com
+172.16.0.147   pic.qichedaquan.com
+172.16.0.104   i.qichedaquan.com
+172.16.0.135   static.xingyuanauto.com
+172.16.1.184   static.qichedaquan.com
+172.16.1.184  m.static.qichedaquan.com
