@@ -87,6 +87,14 @@
 		<button class="button button-border">button</button>
 	</div>
 
+	<div class="button-wrap2">
+		<button class="button-top">top</button>
+		<button class="button-left">left</button>
+		<button class="button-center">center</button>
+		<button class="button-right">right</button>
+		<button class="button-bottom">bottom</button>
+	</div>
+	
 	<!-- swiper -->
 	<div class="swiper-wrap">
 		<div class="swiper-top-wrap">
@@ -335,6 +343,10 @@
 			<div class="circle"></div>
 		</div>
 	</div> -->
+
+	
+
+
 	<script src="/assets/js/lib/jquery/jquery.min.js"></script>
 	<script>
 
@@ -424,7 +436,7 @@
 						if ( i < week) {
 							tr.append($(`<td></td>`))
 						}else{
-							if (i == dayNow && $('.calendar-year a').text() == yearNow && $('.calendar-month a').text() == monthNow) {
+							if (j == dayNow && $('.calendar-year a').text() == yearNow && $('.calendar-month a').text() == monthNow) {
 								tr.append($(`<td class="active">${j++}</td>`))
 							}else{
 								tr.append($(`<td>${j++}</td>`))
@@ -629,6 +641,7 @@
 					$(document).on('mousedown','.drop-wrap li',function(e){
 						console.log($(this).position().top);
 						console.log($(this).position().left);
+						console.log($(this));
 						self.mouseMove($(this));
 						self.mouseUp();
 					})
@@ -636,7 +649,11 @@
 				mouseMove: function(elem){
 					var dropLeft = $('.drop-wrap').offset().left;
 					var dropTop = $('.drop-wrap').offset().top;
+					console.log(dropLeft);
+					console.log(dropTop);
 					$(document).on('mousemove',function(e){
+						console.log(e.pageX);
+						console.log(e.pageY);
 						if (e.pageX-dropLeft >= 0 && e.pageX < dropLeft + $('.drop-wrap').width() && e.pageY-dropTop >= 0 && e.pageY < dropTop + $('.drop-wrap').height()) {
 							elem.css({
 								'left': (e.pageX-dropLeft),
